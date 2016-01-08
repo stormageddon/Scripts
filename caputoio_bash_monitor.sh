@@ -3,12 +3,13 @@
 url="https://api.mailgun.net/v3/sandbox902b5a6f8e3b4bbd9380a5f5b7cb6b21.mailgun.org/messages"
 from="Thor Monitor <postmaster@sandbox902b5a6f8e3b4bbd9380a5f5b7cb6b21.mailgun.org>"
 to="mcaputo@cloudmine.me"
-date=`date +%Y-%m-%d`
+date=`date +%Y-%m-%d+%H:%M`
 subject="Monitoring for $date"
 body="This is my test monitoring email. It should be pretty cool. <br>Try a new line."
 user="api:key-578f7bbca33b10b75b48a99d70170f23"
 req="-s --user '$user' $url -F from='$from' -F to='$to' -F subject='$subject' -F text='$body' -X \"POST\""
 
+echo $date
 
 operationsNormal=true
 
